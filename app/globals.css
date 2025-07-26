@@ -3,6 +3,18 @@
 
 @custom-variant dark (&:is(.dark *));
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -42,8 +54,12 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
+  /* dark */
   --color-dark-1: #1c1f2e; 
   --color-dark-2: #161925; 
+
+  /* blue */
+  --color-blue-1: #0e78f9; 
   
 }
 
