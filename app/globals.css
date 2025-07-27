@@ -15,6 +15,12 @@
   align-items: center;
 }
 
+.glassmorphism{
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -60,6 +66,19 @@
 
   /* blue */
   --color-blue-1: #0e78f9; 
+  --color-sky-1 : #c9ddff;
+
+  /* orange */
+  --color-orange-1: #ff742e;
+
+  /* purple */
+  --color-purple-1: #830ef9;
+
+  /* yellow */
+  --color-yellow-1: #f9a90e;
+
+  /* background */
+   --background-image-hero: url('/images/hero-background.png');
   
 }
 
@@ -140,6 +159,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+
 
 /* clerk */
 .cl-userButtonPopoverActionButtonIcon {
