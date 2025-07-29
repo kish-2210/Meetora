@@ -60,27 +60,64 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* dark */
-  --color-dark-1: #1c1f2e; 
-  --color-dark-2: #161925; 
+  --color-bg-deepest: #0f0f0f;       
+  --color-bg-secondary: #161616;  
 
-  /* blue */
-  --color-blue-1: #0e78f9; 
-  --color-sky-1 : #c9ddff;
+  --color-bg-card-new: #171717;      
+  --color-border-card: rgba(255, 255, 255, 0.08);
+  --color-shadow-card: rgba(255, 255, 255, 0.05); 
+  --color-icon-react: #00b8d4;         /* The blue color of the React icon (if used) */
 
-  /* orange */
-  --color-orange-1: #ff742e;
-
-  /* purple */
-  --color-purple-1: #830ef9;
-
-  /* yellow */
-  --color-yellow-1: #f9a90e;
+  /* --- Navbar Underline Color --- */
+  --color-border-navbar: rgba(255, 255, 255, 0.1); /* Subtle white for the line below navbar */
 
   /* background */
    --background-image-hero: url('/images/hero-background.png');
-  
+
+  --color-button-1:#BAD7F5; 
+  --color-button-2: #10131D;
+
+   
+
+
+
+/* google */
+
+  --color-bg-app-radial-start: #1a202c; /* Dark charcoal blue for gradient start */
+  --color-bg-app-radial-center: #0f172a; /* Deeper dark blue for gradient center */
+  --color-bg-app-radial-end: #000000;     /* Pure black for gradient end */
+
+  /* Main Content Screen Area Background (Solid dark, as per Next.js reference) */
+  --color-bg-screen: #0f0f0f;
+
+  /* Navbar and Sidebar Background (Distinct, slightly darker solid color) */
+  --color-bg-navbar-sidebar: #181C24;
+
+
+   --color-bg-card-new: #242E44;        /* Dark blueish background for the card */
+  --color-border-card-light: #455A7C;   /* Lighter blue for the border */
+  --color-shadow-card-inner: rgba(0, 0, 0, 0.3); 
+
+  --color-border-navbar-transparent: rgba(255, 255, 255, 0.15); /* Subtle border for transparent navbar */
+  --color-shadow-navbar-transparent: rgba(0, 0, 0, 0.4); /* Shadow for transparent navbar */
+  --value-blur-navbar: 12px; 
+  /* --- Screen Hover Effect Color --- */
+  --color-bg-screen-hover: #ffffff;    /* White for the hover effect on screen-like elements */
+
+  /* --- Accent Colors (From Meetora app's vibrant highlights) --- */
+  --color-accent-primary: #5a46ff;     /* Vibrant indigo/purple (active state, primary buttons) */
+  --color-accent-primary-hover: #6d5bff; /* Lighter for hover state */
+  --color-accent-secondary: #f9a90e;   /* Orange/yellow (secondary highlights like user avatar) */
+
+  /* --- Text Colors for Dark Themes --- */
+  --color-text-white: #ffffff;         /* Pure white for prominent text (headings, clock) */
+  --color-text-body: #e0e0e0;          /* Standard light gray for general body text */
+  --color-text-muted: #cccccc;         /* Slightly dimmer for subheadings, inactive menu items */
+  --color-text-dimmed: #888888;        /* For subtle labels, less important details */
+
 }
+
+
 
 :root {
   --radius: 0.625rem;
@@ -189,3 +226,49 @@
 .cl-providerIcon__github{
   filter: invert(1);
 }
+
+
+.bg-app {
+  background-color: var(--color-bg-app-radial-center);
+  background-image: radial-gradient(
+    ellipse at center top,
+    var(--color-bg-app-radial-start) 10%,
+    var(--color-bg-app-radial-center) 50%,
+    var(--color-bg-app-radial-end) 90%
+  );
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+}
+
+.bg-navbar {
+  background-color: transparent; /* Makes the background transparent */
+  border: 1px solid var(--color-border-navbar-transparent); /* Subtle border */
+  border-radius: 1rem; /* Adjust as needed for rounding (equivalent to rounded-2xl) */
+  box-shadow: 0 4px 15px var(--color-shadow-navbar-transparent); /* Subtle shadow */
+  backdrop-filter: blur(var(--value-blur-navbar)); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(var(--value-blur-navbar)); /* For Safari compatibility */
+}
+.bg-sidebar {
+  background-color: var(--color-bg-navbar-sidebar);
+  border: 1px solid var(--color-border-navbar-transparent); /* Subtle border */
+ /* Adjust as needed for rounding (equivalent to rounded-2xl) */
+  box-shadow: 0 4px 15px var(--color-shadow-navbar-transparent); /* Subtle shadow */
+  backdrop-filter: blur(var(--value-blur-navbar)); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(var(--value-blur-navbar)); /* For Safari compatibility */
+}
+
+.bg-screen {
+  background-color: var(--color-bg-screen);
+}
+
+.bg-card {
+  background-color: var(--color-bg-card-new); /* New dark blue background */
+  border: 1px solid var(--color-border-card-light); /* Lighter blue border */
+  border-radius: 0.75rem; /* Equivalent to Tailwind's rounded-xl */
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), /* Subtle top highlight */
+              0 2px 4px var(--color-shadow-card-inner); /* Subtle outer shadow */
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out; /* Smooth transitions */
+}
+
+

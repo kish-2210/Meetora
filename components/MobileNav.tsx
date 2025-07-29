@@ -24,10 +24,10 @@ const MobileNav = () => {
                         width={36}
                         height={36}
                         alt='hamburger icon'
-                        className='cursor-pointer sm:hidden'
+                        className='cursor-pointer sm:hidden ml-5'
                     />
                 </SheetTrigger>
-                <SheetContent side='left' className='border-none bg-dark-1 pt-5 pl-5 '>
+                <SheetContent side='left' className='border-none bg-sidebar pt-5 pl-5 text-white'>
                     <Link href="/" className='flex items-center gap-1'>
                         <Image
                             src="/icons/logo.svg"
@@ -38,7 +38,7 @@ const MobileNav = () => {
                         />
                         <p className='text-[26px] font-extrabold text-white'>Meetora</p>
                     </Link>
-                    <div className="flex h-[calc(100vh-72px)] flex-col justify-between overflow-y-auto ">
+                    <div className="flex h-[calc(100vh-72px)] flex-col justify-between overflow-y-auto">
                         
                             <section className='flex h-full flex-col gap-6 pt-10 text-white '>
                                 {sidebarLinks.map((link) => {
@@ -49,10 +49,10 @@ const MobileNav = () => {
                                             href={link.route}
                                             key={link.label}
                                             className={cn('flex gap-4 items-center p-4 rounded-lg w-full max-w-60', {
-                                                'bg-blue-1': isActive,
+                                                'bg-button-1': isActive,
                                             })}>
-                                            <Image src={link.imgUrl} alt={link.label} width={20} height={20} />
-                                            <p className='font-semibold'>
+                                            <Image src={isActive?link.imgUrl2:link.imgUrl} alt={link.label} width={20} height={20} />
+                                            <p className= {`${isActive ? 'text-button-2' : 'text-button-1'} font-semibold`}>
                                                 {link.label}
                                             </p>
                                         </Link>
