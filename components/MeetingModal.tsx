@@ -4,6 +4,7 @@ import Image from "next/image";
 import {
   Dialog,
   DialogContent,
+  DialogTitle,
 
 } from "@/components/ui/dialog"
 import { cn } from "@/lib/utils";
@@ -12,16 +13,16 @@ import { Button } from "./ui/button";
 interface MeetingModalProps {
 isOpen: boolean;
 onClose: ()=> void;
-title: string;
+dialogTitle: string;
 className?: string;
 children?: ReactNode,
-handleClick?: ()=> void;
+handleClick: ()=> void;
 buttonText?: string;
 image?: string;
 buttonIcon?: string;
 }
 
-const MeetingModal = ({isOpen , onClose , title , className,
+const MeetingModal = ({isOpen , onClose , dialogTitle , className,
     children,handleClick,buttonText,image,buttonIcon} : MeetingModalProps
 ) => {
   return (
@@ -33,9 +34,11 @@ const MeetingModal = ({isOpen , onClose , title , className,
             <Image src={image} alt="image" width={72} height={72}/>
            </div> 
         )}
-        <h1 className={cn('text-3xl text-button-1 font-bold leading-[42px]',className)} >{title}</h1>
+        <DialogTitle className={cn('text-3xl text-button-1 font-bold leading-[42px]',className)} >{dialogTitle}</DialogTitle>
+
         {children}
-        <Button className="bg-button-1 text-button-2 font-bold focus-visible:ring-0 focus-visible:ring-offset-0 cursor-pointer hover:bg-[]" onClick={handleClick}>
+        <Button className="bg-button-1 text-button-2 font-bold focus-visible:ring-0 focus-visible:ring-offset-0 cursor-pointer hover:bg-[]" 
+        onClick = {handleClick}>
             {buttonText && buttonIcon && (
                 <Image src={buttonIcon} alt="button-icon" width={13} height={13}/>
             )} &nbsp;

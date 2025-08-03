@@ -1,13 +1,19 @@
 import React, { ReactNode } from 'react'
-import StreamVideoProvider from '@/providers/StreamClientProvider'
+import StreamVideoProvider from '@/providers/StreamClientProvider' 
+import { SignIn } from "@clerk/nextjs"
+import { currentUser } from "@clerk/nextjs/server"
 
-const layout = ({children}:{children: ReactNode}) => {
+const layout = async ({children}:{children: ReactNode}) => {
+
+   const user = await currentUser()
+
   return (
     <main>
-        <StreamVideoProvider>
-
-        {children}
-        </StreamVideoProvider>
+       
+<StreamVideoProvider>
+{children}
+</StreamVideoProvider>
+        
         
     </main>
 
