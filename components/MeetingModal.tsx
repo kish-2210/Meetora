@@ -14,7 +14,6 @@ interface MeetingModalProps {
 isOpen: boolean;
 onClose: ()=> void;
 dialogTitle: string;
-className?: string;
 children?: ReactNode,
 handleClick: ()=> void;
 buttonText?: string;
@@ -22,7 +21,7 @@ image?: string;
 buttonIcon?: string;
 }
 
-const MeetingModal = ({isOpen , onClose , dialogTitle , className,
+const MeetingModal = ({isOpen , onClose , dialogTitle ,
     children,handleClick,buttonText,image,buttonIcon} : MeetingModalProps
 ) => {
   return (
@@ -34,7 +33,7 @@ const MeetingModal = ({isOpen , onClose , dialogTitle , className,
             <Image src={image} alt="image" width={72} height={72}/>
            </div> 
         )}
-        <DialogTitle className={cn('text-3xl text-button-1 font-bold leading-[42px]',className)} >{dialogTitle}</DialogTitle>
+        <DialogTitle className='text-3xl text-button-1 font-bold leading-[42px] text-center' >{dialogTitle}</DialogTitle>
 
         {children}
         <Button className="bg-button-1 text-button-2 font-bold focus-visible:ring-0 focus-visible:ring-offset-0 cursor-pointer hover:bg-[]" 
