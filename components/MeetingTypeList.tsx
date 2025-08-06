@@ -1,7 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
 import HomeCard from "./HomeCard"
-import HomeCards from "./HomeCards"
 import { useRouter } from "next/navigation"
 import MeetingModal from "./MeetingModal"
 import { useUser } from "@clerk/nextjs"
